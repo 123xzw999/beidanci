@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08090F">
+<meta name="description" content="背单词 · 3920 个 CET 词汇，中英双向记忆">
+<title>背单词 · 下载安装</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#08090F;--ink:#EDF0F7;
+  --dim:rgba(237,240,247,.55);--dim2:rgba(237,240,247,.32);
+  --line:rgba(255,255,255,.08);--glass:rgba(255,255,255,.04);
+  --ease:cubic-bezier(.22,.9,.24,1);
+}
+html,body{min-height:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;letter-spacing:-.01em;
+  overflow-x:hidden;
+}
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  background:radial-gradient(130% 70% at 50% -8%,rgba(88,66,220,.22),transparent 62%)}
+.sky b{position:absolute;border-radius:50%;display:block;filter:blur(58px);opacity:.5}
+.sky b:nth-child(1){width:min(88vw,470px);height:min(88vw,470px);left:-30%;top:-14%;
+  background:radial-gradient(circle,rgba(124,92,255,.9),rgba(124,92,255,0) 70%);animation:d1 32s var(--ease) infinite alternate}
+.sky b:nth-child(2){width:min(74vw,400px);height:min(74vw,400px);right:-26%;top:30%;
+  background:radial-gradient(circle,rgba(23,180,214,.6),rgba(23,180,214,0) 70%);animation:d2 36s var(--ease) infinite alternate}
+@keyframes d1{to{transform:translate3d(12vw,10vh,0) scale(1.12)}}
+@keyframes d2{to{transform:translate3d(-14vw,-8vh,0) scale(1.16)}}
+
+main{position:relative;z-index:2;width:100%;max-width:520px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top) + 44px) 22px calc(env(safe-area-inset-bottom) + 40px);
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* 图标 */
+.icon{width:104px;height:104px;border-radius:24px;display:grid;place-items:center;
+  background:linear-gradient(152deg,#9D80FF 0%,#6346CE 26%,#33206E 55%,#120D26 100%);
+  box-shadow:0 22px 50px -18px rgba(123,92,255,.65),inset 0 1px 0 rgba(255,255,255,.28);
+  position:relative;overflow:hidden}
+.icon::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 52% at 30% 4%,rgba(255,255,255,.34),transparent 58%)}
+.icon span{position:relative;font-family:"Segoe UI",Arial,sans-serif;font-weight:800;
+  font-size:52px;letter-spacing:-.05em;color:#fff;transform:translateY(1px)}
+.icon span em{font-style:normal;font-size:.66em;color:rgba(214,236,255,.74);margin-left:.04em}
+
+h1{font-size:38px;font-weight:800;letter-spacing:-.04em;margin-top:22px;
+  background:linear-gradient(128deg,#fff 8%,#CFC6FF 44%,#7FE6F7 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:13.5px;color:var(--dim);margin-top:10px;line-height:1.6}
+.tags{display:flex;gap:7px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.tag{font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:100px;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--dim)}
+
+/* 下载按钮 */
+.dl{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:60px;
+  margin-top:30px;border-radius:19px;text-decoration:none;color:#0A0B10;
+  font-size:16.5px;font-weight:700;letter-spacing:.01em;position:relative;overflow:hidden;
+  background:linear-gradient(128deg,#B3A5FF 0%,#77E1F2 52%,#9C8BFF 100%);
+  box-shadow:0 18px 40px -14px rgba(139,123,255,.75),inset 0 1px 0 rgba(255,255,255,.6);
+  transition:transform .2s var(--ease)}
+.dl:active{transform:scale(.97)}
+.dl::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite}
+@keyframes sheen{0%,72%{left:-60%}92%,100%{left:130%}}
+.dl small{font-size:12px;font-weight:600;opacity:.72}
+
+/* 二维码 */
+.qr{margin-top:26px;padding:18px 18px 14px;border-radius:22px;
+  background:var(--glass);border:1px solid var(--line);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;align-items:center;gap:10px}
+.qr img{width:168px;height:168px;border-radius:12px;background:#fff;padding:8px;display:block}
+.qr p{font-size:11.5px;color:var(--dim2);letter-spacing:.03em}
+
+/* 步骤 */
+.steps{width:100%;margin-top:26px;padding:20px 20px 8px;border-radius:22px;text-align:left;
+  background:var(--glass);border:1px solid var(--line);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.steps h2{font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--dim2);
+  text-transform:uppercase;margin-bottom:15px}
+.step{display:flex;gap:13px;padding-bottom:16px}
+.step .n{width:23px;height:23px;flex:0 0 23px;border-radius:50%;display:grid;place-items:center;
+  font-size:11.5px;font-weight:700;color:#0A0B10;margin-top:1px;
+  background:linear-gradient(135deg,#A99BFF,#6FE0F0)}
+.step .t{font-size:13.5px;line-height:1.6;color:rgba(237,240,247,.82)}
+.step .t b{color:#fff;font-weight:650}
+.step .t em{font-style:normal;color:#8FE8F8}
+
+.note{width:100%;margin-top:14px;padding:13px 16px;border-radius:15px;text-align:left;
+  font-size:12.5px;line-height:1.65;color:#FFD79E;
+  background:rgba(255,201,120,.08);border:1px solid rgba(255,201,120,.2)}
+.note b{color:#FFE0B0}
+.foot{margin-top:28px;font-size:11px;color:var(--dim2);line-height:1.8;letter-spacing:.03em}
+</style>
+</head>
+<body>
+<div class="sky"><b></b><b></b></div>
+<main>
+  <div class="icon"><span>A<em>a</em></span></div>
+  <h1>背单词</h1>
+  <p class="sub">随机抽词 · 先速记再测试<br>没记住的自动回到下一轮，直到全部拿下</p>
+
+  <div class="tags">
+    <span class="tag">3920 个 CET 词汇</span>
+    <span class="tag">中英双向</span>
+    <span class="tag">离线可用</span>
+  </div>
+
+  <a class="dl" id="dl" href="beidanci.apk" download="背单词.apk">
+    下载安装包 <small>189 KB</small>
+  </a>
+
+  <div class="qr" id="qrbox" style="display:none">
+    <img id="qrimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAAIGAQMAAAAV8dXjAAAABlBMVEULDRb///9C/KPsAAACiElEQVR42u2dW2rDMBBFRb0ALylb95K8AIPiKpLmjuxAIYzy0aOPpm7E+TAc5qFHU/5wHAkCBAgQIED4V4Q92VjO5y2df0/pkc8f6/ls3/qn3yn5+EmfDggQINyM4uajuVrdrBoWRYuwZUoVdmmTd9yEACHczRoGm3jHK0ReTS1TdhWWNwkBwjw3i40ltV3NzfaBmxAgfN3NVy1aFbVgipsQIHyh3qw21u9qTtuTWepNCBBmummj+/f+QwZuQoAQ6ebt2srafrWyc7mdyZuEACE0p+3+6VONjdkluuItbkKAEJ3Ttn7P2BnqbR/NfmVFBTchQAjOaV3e2sJnHjYd7FZo0qeFAGFmTmumJgmffqZkuLgJAUJs3OxSWsDUdZI+pee0YjFvEgKE0LiZW015Xeb0uw10KYW4CQFCdNxMcsjER8r+VANm6r2glbgJAUJw3LSVEXfWRG3cUqs+ZZkFNyFACK83pU9rpeViie7mclqRmTcJAUJkvalNoDdu6t6DDTchQJjkZnLrm2+97aNVprgJAUJsTuv6tJfwmTVStj177D2AACHazZz1ONiNsJrhHuzZgwBhqpsaN/229nHP3mrXfeEmBAiR9aZtOuhjPCPW9fW1KG5CgBBbbw6Hw9wVB3ql13ZZEOVNQoAQFzdt78+4hjnqe8mFcRMChOh6M9/lrbJcUj+0QUROCwFCdL3ZxuIUXVy+mzWm9ptseZMQIITntHk4ZKILm6Oi5LQQIExxU23sGwuSO3Iy1Jv0giBAmOum9y9JMuvudSduQoAwPW7qLQjSoB1M5b4gCBDm1pu3Uvp6M3MnCQQIc9y04Zuw4z1fsruWehMChHA3+R/BECBAgAABwt8IT+Ll3TX5foP+AAAAAElFTkSuQmCC" alt="扫码下载">
+    <p>手机扫码直接下载</p>
+  </div>
+
+  <div class="steps">
+    <h2>怎么装到手机上</h2>
+    <div class="step">
+      <div class="n">1</div>
+      <div class="t">用手机浏览器打开这个页面，点上面的<b>「下载安装包」</b>。</div>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <div class="t">下载完点开文件。如果提示<b>「不允许安装未知来源应用」</b>，点「设置」→ 允许浏览器安装，再返回点一次。</div>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <div class="t">装好后在桌面找到 <em>背单词</em> 图标，点开就能用。全程不需要联网。</div>
+    </div>
+  </div>
+
+  <div class="note" id="wxnote" style="display:none">
+    <b>你现在在微信里打开。</b>微信会拦截 APK 下载 —— 请点右上角「···」，选<b>「在浏览器中打开」</b>，再点下载。
+  </div>
+
+  <div class="foot">
+    版本 1.0 · 支持 Android 5.0 及以上<br>
+    共收录 3920 个 CET4 / CET6 词汇
+  </div>
+</main>
+<script>
+(function(){
+  // 线上链接必须携带 sharecode，静态资源才能访问
+  var sc = null;
+  try { sc = new URLSearchParams(location.search).get('sharecode'); } catch(e) {}
+  if(!sc){
+    var m = location.search.match(/sharecode=([^&]+)/);
+    if(m) sc = m[1];
+  }
+  var dl = document.getElementById('dl');
+  if(sc){ dl.href = 'beidanci.apk?sharecode=' + encodeURIComponent(sc); }
+
+  // 微信内置浏览器拦截 APK，提示换浏览器
+  if(/MicroMessenger/i.test(navigator.userAgent)){
+    document.getElementById('wxnote').style.display = 'block';
+  }
+  // 二维码存在才显示
+  var img = document.getElementById('qrimg');
+  img.onload = function(){ document.getElementById('qrbox').style.display = 'flex'; };
+  img.onerror = function(){ document.getElementById('qrbox').style.display = 'none'; };
+  if(img.complete && img.naturalWidth > 0){
+    document.getElementById('qrbox').style.display = 'flex';
+  }
+})();
+</script>
+</body>
+</html>
